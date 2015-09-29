@@ -10,16 +10,16 @@ html, body {
 
 @font-face {
 	font-family: BryantRegular;
-	src: url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
-		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+	src: url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
 		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
 		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
 }
 
 @font-face {
 	font-family: BryantBold;
-	src: url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
-		url('http://wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
+	src: url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
+		url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
 		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'),
 		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot') /* IE9 */
 }
@@ -45,7 +45,7 @@ html, body {
 	z-index: 1;
 	display: inline;
 	font-family: BryantRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
-	font-size: 40px;
+	font-size: 2.5em;  /*Changed from 40px to aid resizing  PeerReviewEdit*/
 }
 
 #usgsLogoDiv {
@@ -66,6 +66,20 @@ html, body {
 	padding-top: 10px;
 	font-family: BryantBold,"Lucida Sans Unicode", "Lucida Grande", sans-serif ;
 }
+
+/*add to all apps to help the screen size changes PeerReviewEdit*/
+@media screen and (max-width:1100px){
+	#header{
+		font-size:1.75em;
+	}
+}
+
+@media screen and (max-width:800px){
+	#header{
+		font-size:1.0em;
+	}
+}
+/*END PeerReviewEdit*/
 
 #titleSeparator {
 	color: #F37A49;
@@ -246,6 +260,19 @@ button {
 	padding: 5px;
 	max-height: 400px;
 	overflow: auto;
+}
+
+/*BadRiverEdits Edits*/
+@media screen and (max-height:900px){
+	#legend{
+		max-height:200px;
+	}
+}
+
+@media screen and (max-height:600px){
+	#legend{
+		max-height:100px;
+	}
 }
 
 #mobileLayers {
