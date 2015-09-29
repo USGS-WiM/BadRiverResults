@@ -156,7 +156,7 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "The vertical difference in simulated head between model layers. Negative values indicate upward flow. Black areas indicate dry cells either the overlying or both layers."
+				"infoButton": "The vertical difference in simulated head between model layers. Negative values indicate upward flow. Areas with no color indicate dry cells in either the overlying or both layers."
 			}
 		},"UZF Discharge to overland flow" : {
 				"url": servicesURL,
@@ -176,7 +176,7 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "UZF DISCHARGE LAYER DESCRIPTION HERE"
+				"infoButton": "Overland flow (in cfd) modeled with the UZF package (http://pubs.usgs.gov/tm/2006/tm6a19/) that discharges to nearby streams."
 			}
 		}, "Water Table Elevation (raster)" : {
 				"url": servicesURL,
@@ -210,7 +210,7 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "Elevation contours of the water table surface and Raster of the water table surface"
+				"infoButton": "Elevation contours of the water table surface and raster of the water table surface."
 			}
 		}, "Total Baseflow (cfd)" : {
 				"url": servicesURL,
@@ -338,7 +338,7 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "Arrows indicating groundwater flow direction and magnitude. Technically the sizing of the arrows is based on specific discharge, which is the total volume of flow divided by the area. (so for example, if all flow was through one face of a model cell, specific discharge (qs) would be the total discharge through that face(Q) divided by the width times the height of that cell face. We are using qs instead of Q because layer 5 is much thicker than layer 1, even though it is less permeable. Red indicates downward flow (into the layer below); blue indicates upward flow. Because the bottom boundary of the model is no flow, Layer 5 does not have colors)."
+				"infoButton": "Arrows indicating groundwater flow direction and magnitude. Technically the sizing of the arrows is based on specific discharge, which is the total volume of flow divided by the area. For example, if all flow was through one face of a model cell, specific discharge (qs) would be the total discharge through that face (Q) divided by the width times the height of that cell face. qs is used instead of Q to normalize differences in flow caused by layer thickness. Red indicates downward flow through the layer bottom into the layer below; blue indicates upward flow from the layer below. Layer 5 does not have colors because of the no-flow boundary condition on the bottom of the model."
 			}
 		}, "Flux residuals for annual baseflows estimated from 2013 field measurements" : {
 				"url": servicesURL,
@@ -498,7 +498,7 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "Difference between simulated and observed groundwater levels (heads) in ft. - negative value (blue) indicates simulated value that is higher than observed - colors and size indicate a category of absolute difference (in ft.) shown in the legend"
+				"infoButton": "Difference between simulated and observed groundwater levels (heads) in feet. Negative values (blue) indicate simulated value that is higher than observed. The magnitudes of the residuals are indicated by both the colors and the sizes of the markers."
 			}
 		}
 	}; //END allLayers Object
