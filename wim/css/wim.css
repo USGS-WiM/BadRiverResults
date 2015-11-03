@@ -24,7 +24,7 @@
 }
 /*use child selector here to be sure that legend doesn't get the same props (already has it's own)*/
 #availableLayers > #collapsingContainerContent {
-	max-height: 400px;
+	max-height: 300px;
 	overflow-y: auto;
 }
 
@@ -318,7 +318,7 @@
 	z-index:2;
 }
 
-.esriLegendLayerLabel{
+.esriLegendLeft > .esriLegendLayerLabel{
 	visibility:collapse;
 }
 
@@ -388,3 +388,10 @@
 #linksBoxDiv contentPane{
 	border-radius: none;
 }
+
+
+/*removes 'Zoom To' link in the esri infoWindow*/
+.actionList{
+	display:none;
+}
+/*.esriPopup a { display:none; }*/

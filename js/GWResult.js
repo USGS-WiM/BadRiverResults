@@ -96,7 +96,41 @@ function init() {
 	
 	//This object contains all layer and their ArcGIS and Wim specific mapper properties (can do feature, wms and dynamic map layers)
 	allLayers = {
-		"Vertical head difference (Layer 4 - Layer 5)" : {
+		"Bad River Reservation" : {
+				"url": servicesURL,
+				"visibleLayers": [35], 
+				"arcOptions": {
+					"visible": false, 
+					"opacity": 0.5,
+					"id":"ReservationCA"
+				},
+				"wimOptions": {
+					"type": "layer",
+					"includeInLayerList": true,
+					"esriLegendLabel": false
+				}
+
+		},"Bad River Groundwatershed" : {
+				"url": servicesURL,
+				"visibleLayers": [34], 
+				"arcOptions": {
+					"visible": false, 
+					"opacity": 0.5,
+					"id":"gwshed2"
+				},
+				"wimOptions": {
+					"type": "layer",
+					"includeInLayerList": true,
+					"esriLegendLabel": false
+				}
+
+		}, "Groundwater Contributing Areas": {
+			"wimOptions": {
+				"type":"heading",
+				"includeInLayerList": true,
+				"infoButton": "Just as a surface watershed is defined by the topography draining surface runoff to a single, downstream location, a similar concept can be defined for the area contributing groundwater to a given destination. A groundwatershed is the area contributing groundwater to the surface-water system within a watershed (at which point the groundwater joins the surface water in flowing to the downstream point that defines the watershed). The groundwater contributing area for the Bad Reservation is defined as the area contributing groundwater flow that enters the reservation as groundwater (as opposed to the groundwater that discharges to a stream first, and then enters the reservation as surface water). Groundwater contribution is expressed as a percentage of flow ranging from 0 (no water in this area reaches the destination) to 100 (all water in this area reaches the destination). For example, in the case of the Bad River Reservation, all flow from the areas shaded in red reaches the reservation as groundwater. For more information, see the report section titled 'Delineation of Groundwater Contributing Areas.'"
+			}
+		}, "Vertical head difference (Layer 4 - Layer 5)" : {
 				"url": servicesURL,
 				"visibleLayers": [32], 
 				"arcOptions": {
@@ -142,7 +176,7 @@ function init() {
 				"url": servicesURL,
 				"visibleLayers": [29], 
 				"arcOptions": {
-					"visible": true, 
+					"visible": false, 
 					"opacity": 0.90,
 					"id":"l1to2_dh"
 				},
@@ -156,9 +190,9 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "The vertical difference in simulated head between model layers. Negative values indicate upward flow. Areas with no color indicate dry cells in either the overlying or both layers."
+				"infoButton": "The vertical difference in simulated head between model layers. Negative values indicate upward flow. Areas with no color indicate dry cells in either the overlying or both layers.  (Note that if multiple layers are selected, the gradients for all saturated cells in those layers will be displayed simultaneously in order of the layering)."
 			}
-		},"UZF Discharge to overland flow" : {
+		},"Groundwater Discharge Simulated by UZF Package" : {
 				"url": servicesURL,
 				"visibleLayers": [27], 
 				"arcOptions": {
@@ -172,11 +206,11 @@ function init() {
 					"esriLegendLabel": false
 				}
 
-		}, "Overland Flow": {
+		}, "Groundwater Discharge from UZF Package": {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "Overland flow (in cfd) modeled with the UZF package (http://pubs.usgs.gov/tm/2006/tm6a19/) that discharges to nearby streams."
+				"infoButton": "Groundwater discharge simulated by the UZF package (http://pubs.usgs.gov/tm/2006/tm6a19/), which is routed to nearby streams (see “Groundwater discharge from UZF package” layer under the “Streamflow Results” section in this mapper). All values are in cubic feet per day (cfd). Groundwater discharge from the UZF package represents runoff from small seeps, wetlands and streams in low-lying areas that are not explicitly represented as discharge features in the model. For more information, see the report sections on Model Construction (p. 13), Limitations (p. 46), and the discussion on the representation of stream and lakes in Appendix 2 (p. 77-80)."
 			}
 		}, "Water Table Elevation (raster)" : {
 				"url": servicesURL,
@@ -216,7 +250,7 @@ function init() {
 				"url": servicesURL,
 				"visibleLayers": [22], 
 				"arcOptions": {
-					"visible": false, 
+					"visible":  false, 
 					"opacity": 0.90,
 					"id":"Total Baseflow (cfd)"
 				},
@@ -243,7 +277,7 @@ function init() {
 
 				}
 
-		},"Overland Flow (cfd)" : {
+		},"Groundwater discharge from UZF package (cfd)" : {
 				"url": servicesURL,
 				"visibleLayers": [20], 
 				"arcOptions": {
@@ -262,7 +296,7 @@ function init() {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
-				"infoButton": "Three different aspects of the streamflow results from the model. All values are in cubic feet per day (cfd). For overland flow and total flow, the line widths indicate the quantity of flow."
+				"infoButton": "Simulated streamflow components. All values are in cubic feet per day (cfd). Line widths for the Groundwater discharge from the UZF package and Total Baseflow indicate the simulated quantity of flow for those components in each stream cell. Groundwater discharge from the UZF package represents runoff from small seeps, wetlands and streams in low-lying areas that are not explicitly represented as discharge features in the model. For more information, see the report sections on Model Construction (p. 13), Limitations (p. 46), and the discussion on the representation of stream and lakes in Appendix 2 (p. 77-80). The sources of this discharge from the UZF package are shown on a cell-by-cell basis in the “Groundwater discharge simulated by UZF package” layer in this mapper."
 			}
 		},"Layer 5 groundwater specific discharge vectors" : {
 				"url": servicesURL,
@@ -344,8 +378,8 @@ function init() {
 				"url": servicesURL,
 				"visibleLayers": [12], 
 				"arcOptions": {
-					"visible": true, 
-					"opacity": 0.77,
+					"visible": false, 
+					"opacity": 0.95,
 					"id":"2013seepage_opt8c1_best6_rei"
 				},
 				"wimOptions": {
@@ -353,12 +387,12 @@ function init() {
 					"includeInLayerList": true,
 					"esriLegendLabel": false
 				}
-		}, "Flux residuals for the smallest streams" : {
+		}, "Flux residuals for the smallest streams " : {
 				"url": servicesURL,
 				"visibleLayers": [11], 
 				"arcOptions": {
 					"visible": false, 
-					"opacity": 0.75,
+					"opacity": 0.95,
 					"id":"sm_streams_opt8c1_best6_rei"
 				},
 				"wimOptions": {
@@ -371,7 +405,7 @@ function init() {
 				"visibleLayers": [10], 
 				"arcOptions": {
 					"visible": false, 
-					"opacity": 0.75,
+					"opacity": 0.95,
 					"id":"seepagerun_opt8c1_best6_rei"
 				},
 				"wimOptions": {
@@ -384,7 +418,7 @@ function init() {
 				"visibleLayers": [9], 
 				"arcOptions": {
 					"visible": false, 
-					"opacity": 0.75,
+					"opacity": 0.95,
 					"id":"ofr_opt8c1_best6_rei"
 				},
 				"wimOptions": {
@@ -397,7 +431,7 @@ function init() {
 				"visibleLayers": [8], 
 				"arcOptions": {
 					"visible": false, 
-					"opacity": 0.75,
+					"opacity": 0.95,
 					"id":"bad_odanah_opt8c1_best6_rei"
 				},
 				"wimOptions": {
@@ -405,7 +439,7 @@ function init() {
 					"includeInLayerList": true,
 					"esriLegendLabel": false
 				}
-		}, "Baseflow Residuals": {
+		}, "Baseflow Residuals  (All values indicate relative percent difference between simulated and observed)": {
 			"wimOptions": {
 				"type":"heading",
 				"includeInLayerList": true,
@@ -484,7 +518,7 @@ function init() {
 				"url": servicesURL,
 				"visibleLayers": [1], 
 				"arcOptions": {
-					"visible": true, 
+					"visible": false, 
 					"opacity": 0.5,
 					"id":"head_best_opt8c1_best6_rei"
 				},
@@ -782,7 +816,7 @@ function init() {
 
     	//loop through to find only the currently visible spatial layers
     	for (var i = 0; i < layersOnly.length; i++){
-    		if (map.getLayer(layersOnly[i].name).visible == true){
+    		if ((map.getLayer(layersOnly[i].name) != undefined) && (map.getLayer(layersOnly[i].name).visible == true)){
     			visibleLayers.push(layersOnly[i].id);  //visible spatial layers only
     		} else{
     			continue;
@@ -879,7 +913,7 @@ function init() {
              		map.infoWindow.resize(350,400);
                 	var pixelValue = result.feature.attributes['Pixel Value'];
                 	var template = new esri.InfoTemplate("Vertical Head Difference",
-						"<b>Vertical Head Difference Between Layers (ft.)</b>: "+ pixelValue +"<br/>");
+						"<b>Vertical Head Difference Between Layers</b>: "+ pixelValue +" ft.<br/>");
               	
               	//handle other rasters that have result.layerName == "" || result.layerName == undefined
                 } else{
