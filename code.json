@@ -1,0 +1,46 @@
+[
+  {
+    "name": "BadRiverResults",
+    "organization": "U.S. Geological Survey",
+    "description": "Show results for the Bad River Groundwater Model Mapper,
+    "version": "v0.0.0",
+    "status": "Production"
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Public Domain",
+          "URL": "https://github.com/USGS-WiM/BadRiverResults/blob/master/LICENSE.md"
+        }
+      ]
+    },
+
+    "homepageURL": "https://wim.usgs.gov/badriver/results/index.html",
+    "downloadURL": "https://github.com/USGS-WiM/BadRiverResults.git",
+    "disclaimerURL": "https://github.com/USGS-WiM/BadRiverResults/blob/master/LICENSE.md",
+    "repositoryUrl": "https://github.com/USGS-WiM/BadRiverResults",
+    "vcs": "git",
+
+    "laborHours": null,
+
+    "tags": [
+      "Bad River",
+      "groundwater",
+      "results"
+    ],
+
+    "languages": [
+      "javascript"
+    ],
+
+    "contact": {
+      "name": "Erik Myers",
+      "email": "emyers@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2018-02-07"
+    }
+  }
+]
