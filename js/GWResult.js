@@ -226,7 +226,7 @@ function init() {
         type: "heading",
         includeInLayerList: true,
         infoButton:
-          "Groundwater discharge simulated by the UZF package (http://pubs.usgs.gov/tm/2006/tm6a19/), which is routed to nearby streams (see “Groundwater discharge from UZF package” layer under the “Streamflow Results” section in this mapper). All values are in cubic feet per day (cfd). Groundwater discharge from the UZF package represents runoff from small seeps, wetlands and streams in low-lying areas that are not explicitly represented as discharge features in the model. For more information, see the report sections on Model Construction (p. 13), Limitations (p. 46), and the discussion on the representation of stream and lakes in Appendix 2 (p. 77-80).",
+          "Groundwater discharge simulated by the UZF package (https://pubs.usgs.gov/tm/2006/tm6a19/), which is routed to nearby streams (see “Groundwater discharge from UZF package” layer under the “Streamflow Results” section in this mapper). All values are in cubic feet per day (cfd). Groundwater discharge from the UZF package represents runoff from small seeps, wetlands and streams in low-lying areas that are not explicitly represented as discharge features in the model. For more information, see the report sections on Model Construction (p. 13), Limitations (p. 46), and the discussion on the representation of stream and lakes in Appendix 2 (p. 77-80).",
       },
     },
     "Water Table Elevation (raster)": {
@@ -1036,7 +1036,7 @@ function init() {
 
   //Geocoder reference to geocoding services
   locator = new esri.tasks.Locator(
-    "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+    "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
   );
   //calls the function that does the goeocoding logic (found in geocoder.js, an associated JS module)*
   dojo.connect(locator, "onAddressToLocationsComplete", showResults);
@@ -1221,19 +1221,19 @@ function showUSGSLinks(evt) {
     //USGS LINKS GO HERE
     linksDiv.innerHTML += "<p>";
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://www.usgs.gov/">USGS Home</a><br />';
+      '<a style="color:white" target="_blank" href="https://www.usgs.gov/">USGS Home</a><br />';
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://www.usgs.gov/ask/">Contact USGS</a><br />';
+      '<a style="color:white" target="_blank" href="https://www.usgs.gov/ask/">Contact USGS</a><br />';
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://search.usgs.gov/">Search USGS</a><br />';
+      '<a style="color:white" target="_blank" href="https://search.usgs.gov/">Search USGS</a><br />';
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://www.usgs.gov/laws/accessibility.html">Accessibility</a><br />';
+      '<a style="color:white" target="_blank" href="https://www.usgs.gov/laws/accessibility.html">Accessibility</a><br />';
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://www.usgs.gov/foia/">FOIA</a><br />';
+      '<a style="color:white" target="_blank" href="https://www.usgs.gov/foia/">FOIA</a><br />';
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://www.usgs.gov/laws/privacy.html">Privacy</a><br />';
+      '<a style="color:white" target="_blank" href="https://www.usgs.gov/laws/privacy.html">Privacy</a><br />';
     linksDiv.innerHTML +=
-      '<a style="color:white" target="_blank" href="http://www.usgs.gov/laws/policies_notices.html">Policies and Notices</a></p>';
+      '<a style="color:white" target="_blank" href="https://www.usgs.gov/laws/policies_notices.html">Policies and Notices</a></p>';
 
     //place the new div at the click point minus 5px so the mouse cursor is within the div
     linksDiv.style.top = evt.clientY - 5 + "px";
