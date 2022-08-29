@@ -10,18 +10,18 @@ html, body {
 
 @font-face {
 	font-family: BryantRegular;
-	src: url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
-		url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
-		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
-		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
+	src: url('https://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'), 
+		url('https://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot'),
+		url('https://localhost/html5/fonts/Bryant2Combo/Bryant2/Bryant-Regular.otf'),
+		url('https://localhost/html5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebRegular.eot') /* IE9 */
 }
 
 @font-face {
 	font-family: BryantBold;
-	src: url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
-		url('http://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
-		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'),
-		url('http://localhost/html5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot') /* IE9 */
+	src: url('https://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'), 
+		url('https://commons.wim.usgs.gov/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot'),
+		url('https://localhost/html5/fonts/Bryant2Combo/Bryant2/Bryant-Bold.otf'),
+		url('https://localhost/html5/fonts/Bryant2Combo/Bryant2Web_EOT/BryantWebBold.eot') /* IE9 */
 }
 
 #map {
